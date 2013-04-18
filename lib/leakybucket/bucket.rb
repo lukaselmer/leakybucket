@@ -1,10 +1,11 @@
 class Leakybucket::Bucket
 
-  attr_accessor :limit, :value, :leaking_callback
+  attr_accessor :limit, :value, :leaking_callback, :key
 
-  def initialize(options = {})
-    self.limit = options[:limit] || default_options[:limit]
-    self.value = limit
+  def initialize(options = {}, key = '')
+    self.limit = default_options.merge(options)[:limit]
+    self.value = self.limit
+    self.key = key
   end
 
   def default_options

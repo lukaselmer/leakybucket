@@ -54,3 +54,4 @@ describe Leakybucket::Bucket do
     out.should eql('leaking with value -2')
   end
 end
+
