@@ -3,7 +3,7 @@ class Leakybucket::Bucket
   attr_accessor :limit, :value, :leaking_callback, :key
 
   def initialize(options = {}, key = '')
-    self.limit = default_options.merge(options)[:limit]
+    self.limit = default_options.merge(options)[:limit].to_i
     self.value = self.limit
     self.key = key
   end
