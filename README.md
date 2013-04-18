@@ -1,5 +1,9 @@
 # Leakybucket
 
+[![Build Status](https://travis-ci.org/lukaselmer/leakybucket.png?branch=master)](https://travis-ci.org/lukaselmer/leakybucket)
+[![Dependency Status](https://gemnasium.com/lukaselmer/leakybucket.png)](https://gemnasium.com/lukaselmer/leakybucket)
+[![Code Climate](https://codeclimate.com/github/lukaselmer/leakybucket.png)](https://codeclimate.com/github/lukaselmer/leakybucket)
+
 Provides an API to manage leaky buckets.
 
 ## Installation
