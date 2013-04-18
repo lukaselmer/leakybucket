@@ -1,12 +1,16 @@
 require 'leakybucket'
 
 describe Leakybucket::Bucket do
-  it 'creates a leaky bucket' do
-    l = Leakybucket::Bucket.new(limit: 3)
-    l.value.should eql(3)
+  it 'should creates leaky bucket' do
+    l1 = Leakybucket::Bucket.new(limit: 3)
+    l1.value.should eql(3)
+    l2 = Leakybucket::Bucket.new(limit: 5)
+    l2.value.should eql(5)
+    l3 = Leakybucket::Bucket.new
+    l3.value.should eql(3)
   end
 
-  it 'decrement a leaky bucket' do
+  it 'should decrement leaky bucket' do
     l = Leakybucket::Bucket.new(limit: 3)
     l.decrement
     l.value.should eql(2)
