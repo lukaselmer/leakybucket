@@ -17,6 +17,5 @@ tmp
 _yardoc
 doc/
 
-Gemfile.lock
-
 .DS_Store
+.idea
