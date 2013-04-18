@@ -1,7 +1,6 @@
 class Leakybucket::Bucket
 
-  attr_accessor :limit
-  attr_accessor :value
+  attr_accessor :limit, :value, :leaking_callback
 
   def initialize(options = {})
     self.limit = options[:limit] || default_options[:limit]
@@ -14,6 +13,7 @@ class Leakybucket::Bucket
 
   def decrement
     self.value -= 1
+    leaking! if leaking?
   end
 
   def increment
@@ -23,6 +23,10 @@ class Leakybucket::Bucket
 
   def leaking?
     value < 0
+  end
+
+  def leaking!
+    leaking_callback.(value) if leaking_callback.respond_to?(:call)
   end
 
   def reset

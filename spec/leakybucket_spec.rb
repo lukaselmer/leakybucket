@@ -36,4 +36,17 @@ describe Leakybucket::Bucket do
     l.reset
     l.value.should eql(10)
   end
+
+  it 'should call leaking method when leaking on decrement' do
+    l = Leakybucket::Bucket.new(limit: 1)
+    out = ''
+    l.leaking_callback = ->(value){out = "leaking with value #{value}"}
+    out.should eql('')
+    l.decrement
+    out.should eql('')
+    l.decrement
+    out.should eql('leaking with value -1')
+    l.decrement
+    out.should eql('leaking with value -2')
+  end
 end
