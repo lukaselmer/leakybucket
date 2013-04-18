@@ -14,7 +14,7 @@ class Leakybucket::Manager
   end
 
   def create_bucket(options = {})
-    key = options['key'] || generate_key
+    key = options[:key] || generate_key
     b = Leakybucket::Bucket.new(default_options.merge(options), key)
     buckets[key] = b
     b
