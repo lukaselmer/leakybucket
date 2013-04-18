@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Leakybucket::VERSION
   spec.authors       = ["Lukas Elmer"]
   spec.email         = ["lukas.elmer@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Leaky bucket API.}
+  spec.summary       = %q{Provides an API to manage leaky buckets.}
+  spec.homepage      = "https://github.com/lukaselmer/leakybucket"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
