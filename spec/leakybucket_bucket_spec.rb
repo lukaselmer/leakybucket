@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require 'leakybucket'
 
 describe Leakybucket::Bucket do
